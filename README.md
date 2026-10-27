@@ -7,7 +7,7 @@
 [![Google Antigravity](https://img.shields.io/badge/Google%20Antigravity-0.1.22-4285F4.svg)](https://cloud.google.com/)
 [![MediaPipe](https://img.shields.io/badge/MediaPipe-Face%20Mesh-orange.svg)](https://developers.google.com/mediapipe)
 [![FFmpeg](https://img.shields.io/badge/FFmpeg-Vertical%209%3A16-green.svg)](https://ffmpeg.org/)
-[![License: MIT](https://img.shields.io/badge/License-MIT-purple.svg)](LICENSE)
+[![License: Proprietary](https://img.shields.io/badge/License-Proprietary%20%2F%20All%20Rights%20Reserved-red.svg)](LICENSE)
 
 ---
 
@@ -19,7 +19,7 @@
 
 ---
 
-## 🌐 Live Production Deployment
+## Live Production Deployment
 
 FaceBeat-Studio is deployed and serving traffic on **Google Cloud Run**:
 👉 **[https://facebeat-studio-804580957908.us-east1.run.app](https://facebeat-studio-804580957908.us-east1.run.app)**
@@ -217,4 +217,5 @@ gcloud run deploy facebeat-studio \
 ---
 
 ## 📄 License
-Released under the [MIT License](LICENSE). Built for Google Gemini & Antigravity Developer Showcases.
+Copyright © 2026 Jaime Achircano (jaimehernan95). All Rights Reserved.  
+See [LICENSE](LICENSE) for proprietary terms and restrictions.

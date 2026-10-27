@@ -53,6 +53,11 @@
           <option value="normal" selected>Normal</option>
           <option value="hard">Hard (Insane)</option>
         </select>
+
+        <div id="nowPlayingBadge" style="display: none; align-items: center; gap: 6px; background: rgba(0,243,255,0.12); border: 1px solid #00f3ff; border-radius: 6px; padding: 4px 10px; font-size: 0.82rem; color: #00f3ff; animation: pulse 2s infinite;">
+          <span>▶ Active:</span>
+          <span id="nowPlayingText" style="font-weight: 600; max-width: 220px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">No track</span>
+        </div>
       </div>
 
       <div style="display: flex; gap: 8px; align-items: center; flex-wrap: wrap;">

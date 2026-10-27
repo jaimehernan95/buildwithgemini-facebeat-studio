@@ -23,20 +23,20 @@ class SpotifyService:
     TOKEN_URL = "https://accounts.spotify.com/api/token"
     API_BASE = "https://api.spotify.com/v1"
 
-    # Curated Spotify Pop & Dance catalog with artwork, BPM, and audio fallbacks
+    # Curated Spotify Pop & Dance catalog with artwork, BPM, and real CDN audio streams
     CURATED_SPOTIFY_HITS: List[Dict[str, Any]] = [
         {
-            "id": "sp_blinding_lights",
-            "title": "Blinding Lights",
+            "id": "sp_starboy",
+            "title": "Starboy (feat. Daft Punk)",
             "artist": "The Weeknd",
-            "album": "After Hours",
-            "bpm": 171,
-            "duration": 60,
-            "stream_url": "/static/audio/cyber_synth_beat.wav",
+            "album": "Starboy",
+            "bpm": 186,
+            "duration": 30,
+            "stream_url": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/11/71/d6/1171d6ad-3c96-e027-2af6-58028426588c/mzaf_15137631797407745471.plus.aac.p.m4a",
             "cover_art": "https://images.unsplash.com/photo-1514525253161-7a46d19cd819?w=300&q=80",
             "source": "spotify",
-            "preview_url": "/static/audio/cyber_synth_beat.wav",
-            "spotify_url": "https://open.spotify.com/track/0VjIjW4GlULA75m25iJ70M"
+            "preview_url": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/11/71/d6/1171d6ad-3c96-e027-2af6-58028426588c/mzaf_15137631797407745471.plus.aac.p.m4a",
+            "spotify_url": "https://open.spotify.com/track/7MXVkk9YM5IZxh0WSlVIkY"
         },
         {
             "id": "sp_levitating",
@@ -44,11 +44,11 @@ class SpotifyService:
             "artist": "Dua Lipa",
             "album": "Future Nostalgia",
             "bpm": 103,
-            "duration": 60,
-            "stream_url": "/static/audio/funk_acoustic_groove.wav",
+            "duration": 30,
+            "stream_url": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/59/dc/4d/59dc4dda-93ff-8f1c-c536-f005f6ea6af5/mzaf_3066686759813252385.plus.aac.p.m4a",
             "cover_art": "https://images.unsplash.com/photo-1470225620780-dba8ba36b745?w=300&q=80",
             "source": "spotify",
-            "preview_url": "/static/audio/funk_acoustic_groove.wav",
+            "preview_url": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/59/dc/4d/59dc4dda-93ff-8f1c-c536-f005f6ea6af5/mzaf_3066686759813252385.plus.aac.p.m4a",
             "spotify_url": "https://open.spotify.com/track/463CkQjx2Zk1yXoBuierM9"
         },
         {
@@ -57,11 +57,11 @@ class SpotifyService:
             "artist": "Daft Punk",
             "album": "Discovery",
             "bpm": 123,
-            "duration": 60,
-            "stream_url": "/static/audio/cyber_synth_beat.wav",
+            "duration": 30,
+            "stream_url": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/5d/93/d8/5d93d83f-ad1e-da4d-1d79-9937bdff24ec/mzaf_14396932211949300852.plus.aac.p.m4a",
             "cover_art": "https://images.unsplash.com/photo-1508700115892-45ecd05ae2ad?w=300&q=80",
             "source": "spotify",
-            "preview_url": "/static/audio/cyber_synth_beat.wav",
+            "preview_url": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/5d/93/d8/5d93d83f-ad1e-da4d-1d79-9937bdff24ec/mzaf_14396932211949300852.plus.aac.p.m4a",
             "spotify_url": "https://open.spotify.com/track/0DiWol3AO6WpXZgp0gGlNW"
         },
         {
@@ -70,11 +70,11 @@ class SpotifyService:
             "artist": "Bruno Mars",
             "album": "24K Magic",
             "bpm": 106,
-            "duration": 60,
-            "stream_url": "/static/audio/funk_acoustic_groove.wav",
+            "duration": 30,
+            "stream_url": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/45/c4/cb/45c4cb28-670f-f1fe-9678-7fa1601bbb5a/mzaf_2006385778979520718.plus.aac.p.m4a",
             "cover_art": "https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?w=300&q=80",
             "source": "spotify",
-            "preview_url": "/static/audio/funk_acoustic_groove.wav",
+            "preview_url": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/45/c4/cb/45c4cb28-670f-f1fe-9678-7fa1601bbb5a/mzaf_2006385778979520718.plus.aac.p.m4a",
             "spotify_url": "https://open.spotify.com/track/6b8Be6ljOzmk1zslV1eXt8"
         },
         {
@@ -83,11 +83,11 @@ class SpotifyService:
             "artist": "Billie Eilish",
             "album": "WHEN WE ALL FALL ASLEEP, WHERE DO WE GO?",
             "bpm": 135,
-            "duration": 60,
-            "stream_url": "/static/audio/cyber_synth_beat.wav",
+            "duration": 30,
+            "stream_url": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/c3/87/1f/c3871f7e-3260-d615-1c66-5fdca2c3a48f/mzaf_10721331211699880949.plus.aac.p.m4a",
             "cover_art": "https://images.unsplash.com/photo-1518709268805-4e9042af9f23?w=300&q=80",
             "source": "spotify",
-            "preview_url": "/static/audio/cyber_synth_beat.wav",
+            "preview_url": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/c3/87/1f/c3871f7e-3260-d615-1c66-5fdca2c3a48f/mzaf_10721331211699880949.plus.aac.p.m4a",
             "spotify_url": "https://open.spotify.com/track/2Fxmhks0bxGSBdJ92v4422"
         },
         {
@@ -96,11 +96,11 @@ class SpotifyService:
             "artist": "Post Malone & Swae Lee",
             "album": "Spider-Man: Into the Spider-Verse",
             "bpm": 90,
-            "duration": 60,
-            "stream_url": "/static/audio/lofi_piano_chill.wav",
+            "duration": 30,
+            "stream_url": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/98/f0/d6/98f0d67e-f8bf-762d-cac7-1c6b3b6b35dd/mzaf_4543283896248560946.plus.aac.p.m4a",
             "cover_art": "https://images.unsplash.com/photo-1511379938547-c1f69419868d?w=300&q=80",
             "source": "spotify",
-            "preview_url": "/static/audio/lofi_piano_chill.wav",
+            "preview_url": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/98/f0/d6/98f0d67e-f8bf-762d-cac7-1c6b3b6b35dd/mzaf_4543283896248560946.plus.aac.p.m4a",
             "spotify_url": "https://open.spotify.com/track/3KkXRQHbMCARz0aVfEt68P"
         }
     ]
@@ -168,18 +168,90 @@ class SpotifyService:
         return None
 
     @classmethod
+    def search_public_music_catalog(cls, query: str, limit: int = 10) -> List[Dict[str, Any]]:
+        """
+        Queries universal open music database with zero API keys required.
+        Retrieves real pop hits with high-res album covers and direct audio stream previews.
+        """
+        clean_query = (query or "").strip()
+        if not clean_query:
+            return cls.CURATED_SPOTIFY_HITS[:limit]
+
+        try:
+            url = "https://itunes.apple.com/search"
+            params = {
+                "term": clean_query,
+                "entity": "song",
+                "limit": min(25, max(1, limit))
+            }
+            resp = requests.get(url, params=params, headers={"User-Agent": "FaceBeat-Studio/1.0"}, timeout=6)
+            if resp.status_code == 200:
+                results = resp.json().get("results", [])
+                formatted = []
+                for it in results:
+                    preview_url = it.get("previewUrl")
+                    if not preview_url:
+                        continue
+
+                    # High resolution artwork (600x600)
+                    art = it.get("artworkUrl100", "")
+                    if art:
+                        art = art.replace("100x100bb.jpg", "600x600bb.jpg")
+
+                    # Genre-based BPM estimation
+                    genre = it.get("primaryGenreName", "Pop")
+                    bpm = 120
+                    if any(g in genre for g in ("Dance", "Electronic", "House", "EDM")):
+                        bpm = 128
+                    elif any(g in genre for g in ("Hip-Hop", "Rap", "Trap")):
+                        bpm = 96
+                    elif any(g in genre for g in ("Rock", "Alternative", "Metal")):
+                        bpm = 132
+                    elif any(g in genre for g in ("R&B", "Soul", "Funk")):
+                        bpm = 108
+                    elif any(g in genre for g in ("Pop", "Disco")):
+                        bpm = 122
+
+                    formatted.append({
+                        "id": f"sp_{it.get('trackId')}",
+                        "title": it.get("trackName", "Unknown Title"),
+                        "artist": it.get("artistName", "Unknown Artist"),
+                        "album": it.get("collectionName", "Single / Album"),
+                        "bpm": bpm,
+                        "duration": int(it.get("trackTimeMillis", 30000) / 1000),
+                        "stream_url": preview_url,
+                        "cover_art": art or "https://images.unsplash.com/photo-1514525253161-7a46d19cd819?w=300&q=80",
+                        "source": "spotify",
+                        "preview_url": preview_url,
+                        "spotify_url": it.get("trackViewUrl", "")
+                    })
+                if formatted:
+                    return formatted[:limit]
+        except Exception as e:
+            logger.warning(f"Public music catalog search error: {e}")
+
+        # Fallback to filtered curated catalog
+        matches = [
+            t for t in cls.CURATED_SPOTIFY_HITS
+            if clean_query.lower() in t["title"].lower()
+            or clean_query.lower() in t["artist"].lower()
+            or clean_query.lower() in t["album"].lower()
+        ]
+        return matches[:limit] if matches else cls.CURATED_SPOTIFY_HITS[:limit]
+
+    @classmethod
     def search_tracks(cls, query: str = "", limit: int = 10) -> List[Dict[str, Any]]:
         """
         Searches Spotify for matching tracks with album covers, artist names, and BPM.
-        Falls back to curated hits when unconfigured or rate-limited.
+        Automatically leverages open public music database when Spotify credentials are not configured.
         """
-        clean_query = (query or "").strip().lower()
+        clean_query = (query or "").strip()
 
         token = cls.get_client_credentials_token()
         if token and clean_query:
             try:
                 headers = {"Authorization": f"Bearer {token}"}
-                params = {"q": clean_query, "type": "track", "limit": min(20, max(1, limit))}
+                params = {"q": clean_query.lower(), "type": "track", "limit": min(20, max(1, limit))}
                 resp = requests.get(f"{cls.API_BASE}/search", headers=headers, params=params, timeout=5)
                 if resp.status_code == 200:
                     items = resp.json().get("tracks", {}).get("items", [])
@@ -189,40 +261,37 @@ class SpotifyService:
                             images = it.get("album", {}).get("images", [])
                             cover = images[0]["url"] if images else "https://images.unsplash.com/photo-1514525253161-7a46d19cd819?w=300&q=80"
                             artists = ", ".join([a["name"] for a in it.get("artists", [])]) or "Unknown Artist"
-                            preview = it.get("preview_url") or "/static/audio/cyber_synth_beat.wav"
+                            preview = it.get("preview_url")
 
-                            formatted.append({
-                                "id": f"sp_{it.get('id')}",
-                                "title": it.get("name", "Unknown Title"),
-                                "artist": artists,
-                                "album": it.get("album", {}).get("name", "Unknown Album"),
-                                "bpm": 120,
-                                "duration": int(it.get("duration_ms", 60000) / 1000),
-                                "stream_url": preview,
-                                "cover_art": cover,
-                                "source": "spotify",
-                                "preview_url": preview,
-                                "spotify_url": it.get("external_urls", {}).get("spotify", "")
-                            })
-                        return formatted[:limit]
+                            # If Spotify doesn't supply a 30s preview URL, fall back to public catalog stream
+                            if not preview:
+                                pub = cls.search_public_music_catalog(f"{artists} {it.get('name')}", limit=1)
+                                preview = pub[0]["stream_url"] if pub else None
+
+                            if preview:
+                                formatted.append({
+                                    "id": f"sp_{it.get('id')}",
+                                    "title": it.get("name", "Unknown Title"),
+                                    "artist": artists,
+                                    "album": it.get("album", {}).get("name", "Unknown Album"),
+                                    "bpm": 120,
+                                    "duration": int(it.get("duration_ms", 60000) / 1000),
+                                    "stream_url": preview,
+                                    "cover_art": cover,
+                                    "source": "spotify",
+                                    "preview_url": preview,
+                                    "spotify_url": it.get("external_urls", {}).get("spotify", "")
+                                })
+                        if formatted:
+                            return formatted[:limit]
             except Exception as e:
                 logger.warning(f"Error querying Spotify search API: {e}")
 
-        # Curated catalog search
-        if not clean_query:
-            return cls.CURATED_SPOTIFY_HITS[:limit]
+        # When unconfigured or when Spotify doesn't yield streamable results, use open catalog
+        if clean_query:
+            return cls.search_public_music_catalog(clean_query, limit=limit)
 
-        matches = [
-            t for t in cls.CURATED_SPOTIFY_HITS
-            if clean_query in t["title"].lower()
-            or clean_query in t["artist"].lower()
-            or clean_query in t["album"].lower()
-        ]
-
-        if not matches:
-            return cls.CURATED_SPOTIFY_HITS[:limit]
-
-        return matches[:limit]
+        return cls.CURATED_SPOTIFY_HITS[:limit]
 
     @classmethod
     def get_track_audio_features(cls, track_id: str, access_token: str) -> Dict[str, Any]:

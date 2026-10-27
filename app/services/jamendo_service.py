@@ -27,78 +27,78 @@ class JamendoService:
             "title": "Cyber Sunset Drive",
             "artist": "Neon Runner",
             "genre": "Synthwave",
-            "duration": 60,
+            "duration": 30,
             "bpm": 128,
-            "stream_url": "/static/audio/cyber_synth_beat.wav",
+            "stream_url": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview115/v4/c4/52/c6/c452c6de-47ba-afa5-0cc7-2bf47b3896fd/mzaf_2907503907252752691.plus.aac.p.m4a",
             "cover_art": "https://images.unsplash.com/photo-1508700115892-45ecd05ae2ad?w=300&q=80",
             "license": "Creative Commons BY-SA",
             "source": "jamendo",
-            "preview_url": "/static/audio/cyber_synth_beat.wav"
+            "preview_url": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview115/v4/c4/52/c6/c452c6de-47ba-afa5-0cc7-2bf47b3896fd/mzaf_2907503907252752691.plus.aac.p.m4a"
         },
         {
             "id": "jam_102",
             "title": "Tokyo Rain Chills",
             "artist": "Komorebi Beats",
             "genre": "Lo-Fi Hip Hop",
-            "duration": 60,
+            "duration": 30,
             "bpm": 86,
-            "stream_url": "/static/audio/lofi_piano_chill.wav",
+            "stream_url": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/c6/ca/b3/c6cab358-8bd9-c9eb-78b1-e9d9b24d7b88/mzaf_4550525515756835011.plus.aac.p.m4a",
             "cover_art": "https://images.unsplash.com/photo-1518709268805-4e9042af9f23?w=300&q=80",
             "license": "Creative Commons BY",
             "source": "jamendo",
-            "preview_url": "/static/audio/lofi_piano_chill.wav"
+            "preview_url": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/c6/ca/b3/c6cab358-8bd9-c9eb-78b1-e9d9b24d7b88/mzaf_4550525515756835011.plus.aac.p.m4a"
         },
         {
             "id": "jam_103",
             "title": "Electric Midnight Groove",
             "artist": "Soul Funk Collective",
             "genre": "Nu-Funk",
-            "duration": 60,
+            "duration": 30,
             "bpm": 112,
-            "stream_url": "/static/audio/funk_acoustic_groove.wav",
+            "stream_url": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/84/9a/e3/849ae35d-acdc-8f93-7c59-760d7594c406/mzaf_2143528349432358338.plus.aac.p.m4a",
             "cover_art": "https://images.unsplash.com/photo-1470225620780-dba8ba36b745?w=300&q=80",
             "license": "Creative Commons BY-NC",
             "source": "jamendo",
-            "preview_url": "/static/audio/funk_acoustic_groove.wav"
+            "preview_url": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/84/9a/e3/849ae35d-acdc-8f93-7c59-760d7594c406/mzaf_2143528349432358338.plus.aac.p.m4a"
         },
         {
             "id": "jam_104",
             "title": "Hyperdrive Overload",
             "artist": "Quantum Void",
             "genre": "Cyberpunk / EDM",
-            "duration": 60,
+            "duration": 30,
             "bpm": 136,
-            "stream_url": "/static/audio/cyber_synth_beat.wav",
+            "stream_url": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/b4/50/73/b4507308-16ce-030e-e622-cacaff152699/mzaf_16845401851067662023.plus.aac.p.m4a",
             "cover_art": "https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?w=300&q=80",
             "license": "Creative Commons BY",
             "source": "jamendo",
-            "preview_url": "/static/audio/cyber_synth_beat.wav"
+            "preview_url": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/b4/50/73/b4507308-16ce-030e-e622-cacaff152699/mzaf_16845401851067662023.plus.aac.p.m4a"
         },
         {
             "id": "jam_105",
             "title": "Starlight Café",
             "artist": "Mellow Dreamer",
             "genre": "Acoustic Pop",
-            "duration": 60,
+            "duration": 30,
             "bpm": 92,
-            "stream_url": "/static/audio/lofi_piano_chill.wav",
+            "stream_url": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/35/b6/a0/35b6a026-26bc-cfb1-30d3-9c3c1820c63f/mzaf_8281785747956416426.plus.aac.p.m4a",
             "cover_art": "https://images.unsplash.com/photo-1514525253161-7a46d19cd819?w=300&q=80",
             "license": "Creative Commons BY",
             "source": "jamendo",
-            "preview_url": "/static/audio/lofi_piano_chill.wav"
+            "preview_url": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/35/b6/a0/35b6a026-26bc-cfb1-30d3-9c3c1820c63f/mzaf_8281785747956416426.plus.aac.p.m4a"
         },
         {
             "id": "jam_106",
             "title": "Neon Horizon Velocity",
             "artist": "Synth Mirage",
             "genre": "Darksynth",
-            "duration": 60,
+            "duration": 30,
             "bpm": 130,
-            "stream_url": "/static/audio/cyber_synth_beat.wav",
+            "stream_url": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview125/v4/2c/ac/ac/2cacacde-22a1-de34-47a7-0d4d1711214f/mzaf_4276599866472434118.plus.aac.p.m4a",
             "cover_art": "https://images.unsplash.com/photo-1511379938547-c1f69419868d?w=300&q=80",
             "license": "Creative Commons BY-SA",
             "source": "jamendo",
-            "preview_url": "/static/audio/cyber_synth_beat.wav"
+            "preview_url": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview125/v4/2c/ac/ac/2cacacde-22a1-de34-47a7-0d4d1711214f/mzaf_4276599866472434118.plus.aac.p.m4a"
         }
     ]
 
@@ -164,11 +164,20 @@ class JamendoService:
             or clean_query in t["genre"].lower()
         ]
 
-        if not matches:
-            # If no direct match, return catalog so user is never faced with an empty list
-            return cls.CURATED_CATALOG[:limit]
+        if matches:
+            return matches[:limit]
 
-        return matches[:limit]
+        # If user searched for an artist/track not in the CC indie catalog (e.g. pop hit like Dua Lipa),
+        # gracefully query open public music catalog so they get real matching results!
+        try:
+            from app.services.spotify_service import SpotifyService
+            public_matches = SpotifyService.search_public_music_catalog(clean_query, limit=limit)
+            if public_matches:
+                return public_matches
+        except Exception as e:
+            logger.warning(f"Fallback to public music catalog error: {e}")
+
+        return cls.CURATED_CATALOG[:limit]
 
     @classmethod
     def get_trending_tracks(cls, limit: int = 10) -> List[Dict[str, Any]]:

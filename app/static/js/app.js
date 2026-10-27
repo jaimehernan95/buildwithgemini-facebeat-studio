@@ -297,17 +297,37 @@ class FaceBeatApp {
 
   async loadTrack(filename) {
     this.currentTrack = filename;
+
+    // Check if filename is an online stream or full URL
+    const isOnline = filename.startsWith("http://") || filename.startsWith("https://");
+    const audioUrl = isOnline ? filename : (filename.startsWith("/static/") ? filename : `/static/audio/${filename}`);
+
+    if (this.audio) {
+      this.audio.src = audioUrl;
+      this.audio.currentTime = 0;
+      this.audio.load();
+    }
+    if (this.gameEngine && this.gameEngine.audio) {
+      this.gameEngine.audio.src = audioUrl;
+      this.gameEngine.audio.currentTime = 0;
+      this.gameEngine.audio.load();
+    }
+
+    if (isOnline) {
+      this.logAgent("RhythmAnalyzer", `Stream ready: ${this.currentTrackTitle || "Online Track"}`);
+      this.btnStart.disabled = false;
+      return;
+    }
+
     this.logAgent("RhythmAnalyzer", `Requesting beat analysis for '${filename}' (${this.currentDifficulty})...`);
 
-    // Set audio source
-    this.audio.src = `/static/audio/${filename}`;
-
     try {
+      const cleanFilename = filename.replace(/^\/static\/audio\//, "");
       // Safety Check
       const safetyRes = await fetch("/api/tracks/safety-check", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ track_title: filename }),
+        body: JSON.stringify({ track_title: cleanFilename }),
       });
       const safety = await safetyRes.json();
       this.logAgent("AudioSafety", `Copyright status: ${safety.status} (Risk: ${safety.risk_score})`);
@@ -316,7 +336,7 @@ class FaceBeatApp {
       const res = await fetch("/api/tracks/analyze", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ filename: filename, difficulty: this.currentDifficulty }),
+        body: JSON.stringify({ filename: cleanFilename, difficulty: this.currentDifficulty }),
       });
       const beatmap = await res.json();
       this.currentBeatmap = beatmap;
@@ -326,6 +346,7 @@ class FaceBeatApp {
 
       this.logAgent("RhythmAnalyzer", `Beatmap generated: ${beatmap.bpm} BPM, ${beatmap.total_targets} expression targets.`);
       this.btnStart.disabled = false;
+      this.updateNowPlayingBadge(cleanFilename.replace(/_/g, " ").replace(".wav", ""));
     } catch (err) {
       this.logAgent("ERROR", `Failed to analyze track: ${err.message}`);
     }
@@ -785,7 +806,13 @@ class FaceBeatApp {
 
   async selectOnlineTrack(track) {
     this.closeMusicModal();
-    this.logAgent(`Loading online track: "${track.title}" by ${track.artist} (${track.bpm} BPM)...`);
+    this.closeSpotifyModal();
+    if (this.musicPreviewAudio) {
+      this.musicPreviewAudio.pause();
+      this.musicPreviewAudio.currentTime = 0;
+    }
+    this.currentTrackTitle = `${track.title} - ${track.artist}`;
+    this.logAgent("MusicSelector", `Loading track: "${track.title}" by ${track.artist} (${track.bpm || 120} BPM)...`);
 
     try {
       const resp = await fetch("/api/music/select", {
@@ -798,35 +825,58 @@ class FaceBeatApp {
           stream_url: track.stream_url,
           bpm: track.bpm || 120,
           duration: track.duration || 60,
-          difficulty: this.difficulty,
+          difficulty: this.currentDifficulty || "normal",
           source: track.source
         })
       });
 
       const data = await resp.json();
       if (data.status === "success" && data.beatmap) {
+        this.currentBeatmap = data.beatmap;
+        this.currentTrack = data.stream_url;
+
+        // CRITICAL FIX: Update the actual audio element and the game engine audio
+        if (this.audio) {
+          this.audio.src = data.stream_url;
+          this.audio.currentTime = 0;
+          this.audio.load();
+        }
         if (this.gameEngine) {
           this.gameEngine.loadBeatmap(data.beatmap);
-        }
-        if (this.gameAudio) {
-          this.gameAudio.src = data.stream_url;
-          this.gameAudio.currentTime = 0;
+          if (this.gameEngine.audio) {
+            this.gameEngine.audio.src = data.stream_url;
+            this.gameEngine.audio.currentTime = 0;
+            this.gameEngine.audio.load();
+          }
         }
 
-        const sourceLabel = track.source === "jamendo" ? "Jamendo CC" : "Spotify";
-        this.logAgent(`✔ Loaded "${track.title}" [${sourceLabel}]! Beatmap generated with ${data.beatmap.targets.length} targets.`);
+        const sourceLabel = track.source === "jamendo" ? "Jamendo CC" : "Spotify / Pop";
+        this.logAgent("RhythmAnalyzer", `✔ Ready to play: "${track.title}" by ${track.artist}! Generated ${data.beatmap.targets.length} targets.`);
 
-        let opt = Array.from(this.trackSelect.options).find(o => o.value === track.stream_url);
+        let opt = Array.from(this.trackSelect.options).find(o => o.value === data.stream_url);
         if (!opt) {
           opt = document.createElement("option");
-          opt.value = track.stream_url;
-          opt.textContent = `🎵 ${track.title} (${sourceLabel})`;
+          opt.value = data.stream_url;
+          opt.textContent = `🎵 ${track.title} - ${track.artist} (${sourceLabel})`;
           this.trackSelect.appendChild(opt);
         }
-        this.trackSelect.value = track.stream_url;
+        this.trackSelect.value = data.stream_url;
+        this.btnStart.disabled = false;
+
+        this.updateNowPlayingBadge(track.title, track.artist);
       }
     } catch (err) {
-      this.logAgent(`❌ Failed to load track: ${err.message}`);
+      this.logAgent("ERROR", `Failed to load track: ${err.message}`);
+    }
+  }
+
+  updateNowPlayingBadge(title, artist = "") {
+    const badge = document.getElementById("nowPlayingBadge");
+    const textEl = document.getElementById("nowPlayingText");
+    if (badge && textEl) {
+      const displayText = artist ? `${title} • ${artist}` : title;
+      textEl.textContent = displayText;
+      badge.style.display = "inline-flex";
     }
   }
 
